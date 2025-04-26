@@ -72,11 +72,11 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.node_version }}
-
+      
       - name: Cache Node.js modules
         uses: actions/cache@v2
         with:
-          path: .npm
+          path: ~/.npm
           key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.OS }}-node-
